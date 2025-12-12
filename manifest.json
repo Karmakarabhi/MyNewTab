@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Modern Dashboard",
+  "name": "MyNewTab",
   "version": "1.0",
   "description": "A clean, modern new tab page with weather and wallpaper.",
   "chrome_url_overrides": {
