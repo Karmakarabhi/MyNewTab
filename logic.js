@@ -12,6 +12,7 @@ const els = {
   time: document.getElementById('time'),
   date: document.getElementById('date'),
   period: document.getElementById('periodText'),
+  greetingName: document.getElementById('greetingName'),
   wallpaper: document.getElementById('wallpaper'),
   loader: document.getElementById('loader'),
   content: document.getElementById('content'),
@@ -31,6 +32,20 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+// Load saved name from localStorage
+const savedName = localStorage.getItem('username');
+if (savedName) {
+  els.greetingName.textContent = savedName;
+} else {
+  // If no name is saved, display the weekday as a default
+  els.greetingName.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+}
+
+// Save name to localStorage on edit
+els.greetingName.addEventListener('input', (e) => {
+  localStorage.setItem('username', e.target.textContent);
+});
 
 
 
@@ -126,5 +141,5 @@ loadWallpaper();
 
 document.getElementById('app-chatgpt').addEventListener('click', () => window.location.href='https://chatgpt.com');
 document.getElementById('app-perplexity').addEventListener('click', () => window.location.href='https://www.perplexity.ai');
-document.getElementById('app-gmail').addEventListener('click', () => window.location.href='https://gmail.com');
+document.getElementById('app-gmail').addEventListener('click', () => window.location.href='https://mail.google.com');
 document.getElementById('app-github').addEventListener('click', () => window.location.href='https://github.com');

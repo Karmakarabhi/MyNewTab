@@ -58,8 +58,8 @@
     .search-icon { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 20px; }
     .engines { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
     .engine-dot {
-      width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 14px; background: transparent; border: 1px solid transparent; color: var(--text-muted); transition: all 0.2s;
+      width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 18px; background: transparent; border: 1px solid transparent; color: var(--text-muted); transition: all 0.2s;
     }
     .engine-dot:hover { background: var(--glass); color: white; }
     .engine-dot.active { background: rgba(255,255,255,0.15); border-color: var(--border); color: white; }
@@ -101,7 +101,6 @@
         <div class="date" id="date">...</div>
       </div>
       <div class="search-wrapper">
-        <i class="ph ph-magnifying-glass search-icon"></i>
         <input type="text" class="search-bar" id="searchInput" placeholder="Search the web..." autocomplete="off">
         <div class="engines">
           <div class="engine-dot active" data-engine="google" title="Google"><i class="ph ph-google-logo"></i></div>
@@ -113,7 +112,7 @@
     </div>
     <div class="footer">
       <div class="greeting">
-        Good <span id="periodText">Evening</span>
+        Good <span id="periodText">Evening</span>, <span id="greetingName" contenteditable="true">Monday</span>
       </div>
       <div class="dock">
         <button class="app-icon" id="app-chatgpt" title="ChatGPT"><i class="ph ph-robot"></i></button>
